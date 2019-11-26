@@ -71,8 +71,6 @@ namespace cube
                 this.z /= magnit;
             }
         }
-
-
        
 
         public static Vector3 operator +(Vector3 V1, Vector3 V2)

@@ -1,14 +1,15 @@
 #pragma once
 #include <iostream>
-#include <math.h>
+#include <string.h>
+
 
 class Vector3
 {
 public:
 
-	float m_x;
-	float m_y;
-	float m_z;
+	float	m_x;
+	float	m_y;
+	float	m_z;
 
 	void	setX(float t_x);
 	void	setY(float t_y);
@@ -19,6 +20,25 @@ public:
 	~Vector3();
 
 
-	float length();
+	float	length();
+	float	lengthSquared();
+	void	normalise();
 
+
+	 Vector3	operator+(Vector3 v1);
+	 Vector3	operator-(Vector3 v1);
+	 float		operator*(Vector3 v1);
+	 Vector3	operator *(float k);
+	 Vector3	operator ^(Vector3 V1);
+	 std::string toString();
+	 
+
+
+	 friend Vector3 operator+(const Vector3& v1, const Vector3& v2);
+	 friend Vector3 operator-(const Vector3& v1, const Vector3& v2);
+
+	 Vector3 operator - ();
+
+
+	
 };
