@@ -1,7 +1,5 @@
 #pragma once
-#include <iostream>
-#include <string.h>
-
+#include <math.h>
 
 class Vector3
 {
@@ -30,14 +28,13 @@ public:
 	 float		operator*(Vector3 v1);
 	 Vector3	operator *(float k);
 	 Vector3	operator ^(Vector3 V1);
-	 std::string toString();
-	 
+	 Vector3	operator - ();
 
 
 	 friend Vector3 operator+(const Vector3& v1, const Vector3& v2);
 	 friend Vector3 operator-(const Vector3& v1, const Vector3& v2);
 
-	 Vector3 operator - ();
+	 
 
 
 	

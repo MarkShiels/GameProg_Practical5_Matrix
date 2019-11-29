@@ -17,9 +17,9 @@ void Vector3::setZ(float t_z)
 
 Vector3::Vector3()
 {
-	setX(1.0f);
-	setY(1.0f);
-	setZ(1.0f);
+	setX(0.0f);
+	setY(0.0f);
+	setZ(0.0f);
 }
 
 Vector3::Vector3(float t_x, float t_y, float t_z)
@@ -101,11 +101,4 @@ Vector3 Vector3::operator ^(Vector3 V1)
 {
 	// An overloaded operator ^ to return the vector product of 2 vectors
 	return Vector3((m_y * V1.m_z - m_z * V1.m_y), -(m_x * V1.m_z - m_z * V1.m_x), (m_x * V1.m_y - m_y * V1.m_x));
-}
-
-std::string Vector3::toString()
-{
-	//return "(" +  + "," + m_y.ToString("g3") + "," + m_z.ToString("g3") + ")";
-
-	return;
 }
