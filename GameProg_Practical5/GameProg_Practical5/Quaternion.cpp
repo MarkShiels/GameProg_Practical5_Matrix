@@ -82,13 +82,14 @@ Quaternion Quaternion::copy()
 	return Quaternion(m_w, m_i, m_j, m_k);
 }
 
-Vector3 Quaternion::rotate(Vector3 V1, int angle)
+Vector3 Quaternion::rotate(Vector3 V1, float angle)
 {
-	Quaternion axis, rotate;
+	Quaternion axis;
+	Quaternion	rotate;
 
 	axis = normalise();
 
-	double angleRad = M_PI / 180 * angle;
+	float angleRad = M_PI / 180 * angle;
 
 	rotate = Quaternion(cos(angleRad / 2), sin(angleRad / 2) * axis.m_i, sin(angleRad / 2) * axis.m_j, sin(angleRad / 2) * axis.m_k);
 

@@ -20,12 +20,14 @@ public:
 	Quaternion	conjugate();
 	void		fromAxisAngle(Vector3 axis, float angleRadian);
 	Quaternion	multiply(Quaternion q1);
-	Quaternion copy();
-	Vector3 rotate(Vector3 V1, int angle);
-	
+	Quaternion	copy();
+	Vector3		rotate(Vector3 V1, float angle);
+
 	Quaternion operator +(Quaternion q1);
 	Quaternion operator -();
 	Quaternion operator -(Quaternion q1);
 	Quaternion operator *(Quaternion q1);
-	
-}
+
+};
+
+
