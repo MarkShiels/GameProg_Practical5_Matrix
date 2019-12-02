@@ -1,5 +1,8 @@
 #pragma once
+#define _USE_MATH_DEFINES
 #include "Vector3.h"
+#include <cmath>
+
 
 class Matrix3
 {
@@ -39,4 +42,28 @@ public:
 
 	// An overloaded operator * to return the  difference of two matrix
 	Matrix3 operator -(Matrix3 M1);
+
+	// An overloaded operator * to return the  product of the matrix by a scalar
+	Matrix3 operator *(double x);
+
+	// An overloaded operator * to return the  product of two matrix
+	Matrix3 operator *(Matrix3 M1);
+
+	// method to return the determinant of a 3x3 matrix
+	float determinant();
+
+	// a method to return as Row as vector3 1 == first row
+	Vector3 row(int i);
+
+	// a method to return as column as vector3 1 == first column
+	Vector3 column(int i);
+
+	// method to return the inverse of a matrix if exists else zero vector
+	Matrix3 inverse();
+
+	Matrix3 rotation(float angle);
+
+	Matrix3 translate(float dx, float dy);
+
 };
+

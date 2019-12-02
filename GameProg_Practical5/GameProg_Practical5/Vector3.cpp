@@ -102,3 +102,8 @@ Vector3 Vector3::operator ^(Vector3 V1)
 	// An overloaded operator ^ to return the vector product of 2 vectors
 	return Vector3((m_y * V1.m_z - m_z * V1.m_y), -(m_x * V1.m_z - m_z * V1.m_x), (m_x * V1.m_y - m_y * V1.m_x));
 }
+
+void Vector3::print()
+{
+	std::cout << " " << m_x << " " << m_y << " " << m_z << std::endl;
+}
