@@ -44,7 +44,7 @@ public:
 	Matrix3 operator -(Matrix3 M1);
 
 	// An overloaded operator * to return the  product of the matrix by a scalar
-	Matrix3 operator *(double x);
+	Matrix3 operator *(float x);
 
 	// An overloaded operator * to return the  product of two matrix
 	Matrix3 operator *(Matrix3 M1);
@@ -64,6 +64,18 @@ public:
 	Matrix3 rotation(float angle);
 
 	Matrix3 translate(float dx, float dy);
+
+	Matrix3 Scale(float dx, float dy);
+	
+	Matrix3 operator -();
+	
+	Matrix3 rotationX(float angle);
+
+	Matrix3 rotationY(float angle);
+
+	Matrix3 rotationZ(float angle);
+
+	Matrix3 scale3D(float dx);
 
 };
 

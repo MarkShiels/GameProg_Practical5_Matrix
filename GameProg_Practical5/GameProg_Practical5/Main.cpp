@@ -82,7 +82,7 @@ int main()
 	/*Vector3 m1R1 = M1.row(2);
 	std::cout << "M1 Row: " << m1R1.m_x << " " << m1R1.m_y << " " << m1R1.m_z << std::endl;*/
 
-	Matrix3 M1_inverse = M1.inverse();
+	/*Matrix3 M1_inverse = M1.inverse();
 	
 	Vector3 M1_inverse_r1 = M1_inverse.row(1);
 	Vector3 M1_inverse_r2 = M1_inverse.row(2);
@@ -90,7 +90,17 @@ int main()
 
 	M1_inverse_r1.print();
 	M1_inverse_r2.print();
-	M1_inverse_r3.print();
+	M1_inverse_r3.print();*/
+/*
+	Matrix3 M1_inverse = M1.operator-();
+
+	Vector3 M1_inverse_r1 = M1_inverse.row(1);
+	Vector3 M1_inverse_r2 = M1_inverse.row(2);
+	Vector3 M1_inverse_r3 = M1_inverse.row(3);
+	
+	M1_inverse_r1.print();
+	M1_inverse_r2.print();
+	M1_inverse_r3.print();*/
 
 	std::cout << std::endl;
 	system("Pause");

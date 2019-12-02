@@ -77,7 +77,7 @@ Matrix3 Matrix3::operator -(Matrix3 M1)
 }
 
 // An overloaded operator * to return the  product of the matrix by a scalar
-Matrix3 Matrix3::operator *(double x)
+Matrix3 Matrix3::operator *(float x)
 {
 	Matrix3 answer;
 
@@ -212,6 +212,95 @@ Matrix3 Matrix3::translate(float dx, float dy)
 	answer.m_A31 = dx;
 	answer.m_A32 = dy;
 	answer.m_A33 = 1;
+
+	return answer;
+}
+
+Matrix3 Matrix3::Scale(float dx, float dy)
+{
+	Matrix3 answer = Matrix3();
+	answer.m_A11 = dx / 100;
+	answer.m_A12 = 0;
+	answer.m_A13 = 0;
+	answer.m_A21 = 0;
+	answer.m_A22 = dy / 100;
+	answer.m_A23 = 0;
+	answer.m_A31 = 0;
+	answer.m_A32 = 0;
+	answer.m_A33 = 1;
+
+	return answer;
+}
+
+Matrix3 Matrix3::operator -()
+{
+	return operator*(-1);
+}
+
+Matrix3 Matrix3::rotationX(float angle)
+{
+	float radians = M_PI / 180 * angle;
+	Matrix3 answer = Matrix3();
+	answer.m_A11 = 1;
+	answer.m_A12 = 0;
+	answer.m_A13 = 0;
+	answer.m_A21 = 0;
+	answer.m_A22 = cos(radians);
+	answer.m_A23 = -sin(radians);
+	answer.m_A31 = 0;
+	answer.m_A32 = sin(radians);
+	answer.m_A33 = cos(radians);
+
+	return answer;
+}
+
+Matrix3 Matrix3::rotationY(float angle)
+{
+	float radians = M_PI / 180 * angle;
+	Matrix3 answer = Matrix3();
+	answer.m_A11 = cos(radians);
+	answer.m_A12 = 0;
+	answer.m_A13 = sin(radians);
+	answer.m_A21 = 0;
+	answer.m_A22 = 1;
+	answer.m_A23 = 0;
+	answer.m_A31 = -sin(radians);
+	answer.m_A32 = 0;
+	answer.m_A33 = cos(radians);
+
+	return answer;
+}
+
+Matrix3 Matrix3::rotationZ(float angle)
+{
+	float radians = M_PI / 180 * angle;
+	Matrix3 answer = Matrix3();
+	answer.m_A11 = cos(radians);
+	answer.m_A12 = -sin(radians);
+	answer.m_A13 = 0;
+	answer.m_A21 = sin(radians);
+	answer.m_A22 = cos(radians);
+	answer.m_A23 = 0;
+	answer.m_A31 = 0;
+	answer.m_A32 = 0;
+	answer.m_A33 = 1;
+
+	return answer;
+}
+
+
+Matrix3 Matrix3::scale3D(float dx)
+{
+	Matrix3 answer = Matrix3();
+	answer.m_A11 = dx / 100;
+	answer.m_A12 = 0;
+	answer.m_A13 = 0;
+	answer.m_A21 = 0;
+	answer.m_A22 = dx / 100;
+	answer.m_A23 = 0;
+	answer.m_A31 = 0;
+	answer.m_A32 = 0;
+	answer.m_A33 = dx / 100;
 
 	return answer;
 }
