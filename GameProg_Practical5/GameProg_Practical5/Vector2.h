@@ -1,5 +1,6 @@
 #pragma once
 #include <math.h>
+#include <iostream>
 
 class Vector2
 {
@@ -32,7 +33,7 @@ public:
 	friend Vector2 operator+(const Vector2& v1, const Vector2& v2);
 	friend Vector2 operator-(const Vector2& v1, const Vector2& v2);
 
-	
+	void	print();
 
 
 

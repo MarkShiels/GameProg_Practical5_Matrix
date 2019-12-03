@@ -83,6 +83,11 @@ Vector2 Vector2::operator - ()
 	return Vector2(m_x = -m_x, m_y = -m_y);
 }
 
+void Vector2::print()
+{
+	std::cout << " " << m_x << " " << m_y << std::endl;
+}
+
 Vector2 Vector2::operator *(float k)
 {
 	// An overloaded operator * to return the product of a scalar by a vector

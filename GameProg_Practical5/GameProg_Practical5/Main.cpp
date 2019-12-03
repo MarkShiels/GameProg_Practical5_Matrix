@@ -7,7 +7,7 @@
 int main()
 {
 
-	/*Vector3 v1(2.0f, 2.0f, 2.0f);
+	Vector3 v1(2.0f, 2.0f, 2.0f);
 	Vector3	v2(6.0f, 7.0f, 9.0f);
 
 	Vector3 v3;
@@ -17,7 +17,10 @@ int main()
 
 	Vector2 v23;
 
-	v3 = v1.operator+(v2);
+	float result2d;
+
+
+	/*v3 = v1.operator+(v2);
 	std::cout << "V1 + V2: " << v3.m_x << " " << v3.m_y << " " << v3.m_z << " " << std::endl;
 
 	v3 = v2.operator-(v1);
@@ -53,8 +56,25 @@ int main()
 	v23 = v21.operator*(4);
 	std::cout << "V21 * 4: " << v23.m_x << "," << v23.m_y << std::endl;
 
-	float result2d = v21.operator^(v22);
+	result2d = v21.operator^(v22);
 	std::cout << "V21 x v22: " << result2d << std::endl;*/
+
+	 result2d = v21.operator*(v22);
+	 std::cout << " " << result2d << std::endl;
+
+	v23 = v21 + v22;
+	v23.print();
+
+	result2d = v21.length();
+	std::cout << " " << result2d << std::endl;
+
+	result2d = v21.lengthSquared();
+	std::cout << " " << result2d << std::endl;
+
+	v21.print();
+	v21.normalise();
+	v21.print();
+
 
 
 	Matrix3 M1 (3.0f, 2.0f, 3.0f,
