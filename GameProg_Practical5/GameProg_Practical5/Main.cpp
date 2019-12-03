@@ -7,17 +7,59 @@
 int main()
 {
 
-	Vector3 v1(2.0f, 2.0f, 2.0f);
-	Vector3	v2(6.0f, 7.0f, 9.0f);
+	Vector3 v1(0.0f, 2.0f, -5.0f);
+	Vector3	v2(-2.0f, -2.0f, -5.0f);
+	Vector3 v3(2.0f, -2.0f, -5.0f);
+	
+	float rotateZ{ 23.21 };//for vector 3
+	float rotateQuatZ{ 5 };
 
-	Vector3 v3;
+	float lengthV1;
+	float lengthSqV2;
 
-	Vector2 v21(3.0f, 4.0f);
+	Matrix3 m1( 1,0,0,
+			    0,1,0,
+			    0,0,1 );
+
+	Matrix3 resultMatrix;
+
+	/*lengthV1 = v1.length();
+	std::cout << "V1 Length: " << lengthV1 << std::endl;
+
+	lengthSqV2 = v2.lengthSquared();
+	std::cout << "V2 Length Squared: " << lengthSqV2 << std::endl;
+
+	std::cout << std::endl;*/
+
+	resultMatrix = m1.rotationZ(rotateZ);
+	Vector3 rM_v1 = resultMatrix.row(1);
+	Vector3 rm_v2 = resultMatrix.row(2);
+	Vector3 rm_v3 = resultMatrix.row(3);
+
+	rM_v1.print();
+	rm_v2.print();
+	rm_v3.print();
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*Vector2 v21(3.0f, 4.0f);
 	Vector2 v22(5.0f, 2.0f);
 
 	Vector2 v23;
 
-	float result2d;
+	float result2d;*/
 
 
 	/*v3 = v1.operator+(v2);
@@ -77,13 +119,13 @@ int main()
 */
 
 
-	Matrix3 M1 (3.0f, 2.0f, 3.0f,
+	/*Matrix3 M1 (3.0f, 2.0f, 3.0f,
 				1.0f, 4.0f, 6.0f,
 				5.0f, 2.0f, 4.0f);
 
 	Matrix3 M2(2.0f, 5.0f, 4.0f,
 				2.0f,3.0f,1.0f,
-				4.0f, 1.0f,6.0f);
+				4.0f, 1.0f,6.0f);*/
 
 	/*Matrix3 M3 = M1.operator*(M2);
 
@@ -93,11 +135,11 @@ int main()
 	std::cout << M3.m_A31 << " " << M3.m_A32 << " " << M3.m_A33 << std::endl;
 
 
-	float bull = M1.determinant();
-	std::cout << " M1 determinant: " << bull << std::endl;
+	float m1Det = M1.determinant();
+	std::cout << " M1 determinant: " << m1Det << std::endl;
 
-	float cow = M2.determinant();
-	std::cout << " M2 determinant: " << cow << std::endl;*/
+	float m2Det = M2.determinant();
+	std::cout << " M2 determinant: " << m2Det << std::endl;*/
 
 	/*Vector3 m1R1 = M1.row(2);
 	std::cout << "M1 Row: " << m1R1.m_x << " " << m1R1.m_y << " " << m1R1.m_z << std::endl;*/
@@ -121,6 +163,8 @@ int main()
 	M1_inverse_r1.print();
 	M1_inverse_r2.print();
 	M1_inverse_r3.print();*/
+
+
 
 	std::cout << std::endl;
 	system("Pause");
