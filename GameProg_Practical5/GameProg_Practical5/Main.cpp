@@ -58,7 +58,7 @@ int main()
 
 	result2d = v21.operator^(v22);
 	std::cout << "V21 x v22: " << result2d << std::endl;*/
-
+/*
 	 result2d = v21.operator*(v22);
 	 std::cout << " " << result2d << std::endl;
 
@@ -74,7 +74,7 @@ int main()
 	v21.print();
 	v21.normalise();
 	v21.print();
-
+*/
 
 
 	Matrix3 M1 (3.0f, 2.0f, 3.0f,
