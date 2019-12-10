@@ -5,11 +5,9 @@
 #include <cmath>
 class Quaternion
 {
-private:
+public:
 
 	float	m_w, m_i, m_j, m_k;
-
-public:
 
 	Quaternion();
 	Quaternion(float t_w, float t_i, float t_j, float t_k);

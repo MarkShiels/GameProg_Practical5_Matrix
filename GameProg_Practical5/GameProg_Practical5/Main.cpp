@@ -2,7 +2,7 @@
 #include "Vector3.h"
 #include "Vector2.h"
 #include "Matrix3.h"
-
+#include "Quaternion.h"
 
 int main()
 {
@@ -23,13 +23,16 @@ int main()
 
 	Matrix3 resultMatrix;
 
-	/*lengthV1 = v1.length();
+	Quaternion	q1{5, v2};
+	Vector3	qV;
+
+	lengthV1 = v1.length();
 	std::cout << "V1 Length: " << lengthV1 << std::endl;
 
 	lengthSqV2 = v2.lengthSquared();
 	std::cout << "V2 Length Squared: " << lengthSqV2 << std::endl;
 
-	std::cout << std::endl;*/
+	std::cout << std::endl;
 
 	resultMatrix = m1.rotationZ(rotateZ);
 	Vector3 rM_v1 = resultMatrix.row(1);
@@ -40,9 +43,20 @@ int main()
 	rm_v2.print();
 	rm_v3.print();
 
-	
+	resultMatrix = m1.rotationZ(rotateQuatZ);
+	rM_v1 = resultMatrix.row(1);
+	rm_v2 = resultMatrix.row(2);
+	rm_v3 = resultMatrix.row(3);
 
+	rM_v1.print();
+	rm_v2.print();
+	rm_v3.print();
 
+	qV = q1.rotate(v3, rotateQuatZ);
+	qV.print();
+
+	qV = q1.rotate(v3, rotateZ);
+	qV.print();
 
 
 
